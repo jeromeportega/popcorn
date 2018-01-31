@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 # Popcorn
+---
 A movie list making application created with Facebook React, Twitter Bootstrap, Node.js, and MySQL.
 ---
 ### Get Started
