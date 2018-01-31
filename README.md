@@ -1,9 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 # Popcorn
+React, Twitter Bootstrap, Node, Express, MySQL
 ---
-A movie list making application created with Facebook React, Twitter Bootstrap, Node.js, and MySQL.
----
+### Description
+A movie app where you can make a watchlist, share it with friends, and explore to find new movies to watch.
+
 ### Get Started
 1. Download or clone repository.
 2. Navigate to directory and type npm start.
