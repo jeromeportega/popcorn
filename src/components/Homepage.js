@@ -1,9 +1,23 @@
+// Libraries
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Carousel } from 'react-bootstrap';
-import FeaturedMoviesCarousel from './featured-movies-carousel';
 import * as APIHelper from '../APIHelper.js';
-import * as $ from 'jquery';
+import { Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+// Animation Libraries
+import { fadeIn } from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
+
+// Components
+import FeaturedMoviesCarousel from './featured-movies-carousel';
+
+// Declare Animations to be used below.
+const styles = {
+    fadeIn: {
+        animation: 'x .5s',
+        animationName: Radium.keyframes(fadeIn, 'fadeIn'),
+    }
+}
 
 class Homepage extends Component {
     constructor() {
@@ -12,13 +26,15 @@ class Homepage extends Component {
         this.state = {
             carouselMovies: [],
         }
+
+        this._addMovie = this._addMovie.bind(this);
     }
 
     componentDidMount() {
-        this.getCarouselMovies();
+        this._getCarouselMovies();
     }
 
-    getCarouselMovies() {
+    _getCarouselMovies() {
         APIHelper.getCarouselMovies()
             .then((data) => {
                 console.log(data.results.length);
@@ -26,6 +42,10 @@ class Homepage extends Component {
                     carouselMovies: data.results,
                 });
             });
+    }
+
+    _addMovie(movie) {
+        console.log(movie);
     }
 
     render() {
@@ -44,8 +64,18 @@ class Homepage extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
-                        <FeaturedMoviesCarousel movies={this.state.carouselMovies} />
+                    <div className="col text-center">
+                        {
+                            this.state.carouselMovies.length > 0 &&
+                                <StyleRoot>
+                                    <div style={styles.fadeIn}>
+                                        <FeaturedMoviesCarousel
+                                            movies={this.state.carouselMovies}
+                                            addMovie={this._addMovie}
+                                        />
+                                    </div>
+                                </StyleRoot>
+                        }
                     </div>
                 </div>
             </div>

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "radium": "^0.21.2",
     "react": "~16.1.0",
+    "react-animations": "^1.0.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "~16.1.0",
     "react-scripts": "~1.0.17",
