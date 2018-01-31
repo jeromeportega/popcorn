@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 # Popcorn
 React, Twitter Bootstrap, Node, Express, MySQL
 ---
@@ -14,3 +12,7 @@ A movie app where you can make a watchlist, share it with friends, and explore t
 ---
 ### Other Information
 This is a WORK IN PROGRESS!  Many changes always being made.  If you would like to contribute, please issue a pull request for one of our official contributor's review.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+Engineers and Creators:  Jerome "Jerry" Ortega, James "Jeiji" Bruno
