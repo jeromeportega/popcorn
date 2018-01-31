@@ -1,5 +1,5 @@
 # Popcorn
-React, Twitter Bootstrap, Node, Express, MySQL
+React - Twitter Bootstrap - Node - Express - MySQL
 ---
 ### Description
 A movie app where you can make a watchlist, share it with friends, and explore to find new movies to watch.
