@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import ControlledCarousel from './controlled-carousel';
+import FeaturedMoviesCarousel from './featured-movies-carousel';
 import * as APIHelper from '../APIHelper.js';
 import * as $ from 'jquery';
 
@@ -45,7 +45,7 @@ class Homepage extends Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <ControlledCarousel movies={this.state.carouselMovies}/>
+                        <FeaturedMoviesCarousel movies={this.state.carouselMovies} />
                     </div>
                 </div>
             </div>
