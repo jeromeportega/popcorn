@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LoginHeader from './LoginHeader';
 
 class Login extends Component {
@@ -40,6 +40,11 @@ class Login extends Component {
     _loginUser() {
         console.log(this.state.email);
         console.log(this.state.password);
+        if (!this.state.email) return;
+        if (!this.state.password) return;
+        this.setState({
+            reroute: true,
+        });
     }
 
     render() {
@@ -81,6 +86,11 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
+                {
+                    // This just redirects the user to their dashboard if they are already signed in, or have signed in succesfully.
+                    !!this.state.reroute &&
+                        <Redirect to="/dashboard" push />
+                }
             </div>
         );
     }
