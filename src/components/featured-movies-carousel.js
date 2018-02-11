@@ -27,8 +27,8 @@ class FeaturedMoviesCarousel extends Component {
             dots: true,
             infinite: true,
             speed: 750,
-            slidesToShow: 7,
-            slidesToScroll: 7,
+            slidesToShow: 6,
+            slidesToScroll: 6,
         };
 
         return (
@@ -39,7 +39,8 @@ class FeaturedMoviesCarousel extends Component {
                             <img key={index}
                                  alt=""
                                  className="img-responsive cursor carousel-poster"
-                                 src={APIHelper.posterSmall + movie.poster_path}
+                                 src={APIHelper.posterLarge + movie.poster_path}
+                                 onError={() => this.props.deleteMovie(index)}
                                  onClick={() => {
                                     this.setState({
                                         showMovieDetailsModal: true,

@@ -54,7 +54,7 @@ class Login extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
-                            <div className="jumbotron">
+                            <div className="jumbotron popup-background">
                                 <div className="form-horizontal">
                                     <div className="form-group">
                                         <label className="control-label col-sm-2">Email Address:</label>
@@ -89,7 +89,7 @@ class Login extends Component {
                 {
                     // This just redirects the user to their dashboard if they are already signed in, or have signed in succesfully.
                     !!this.state.reroute &&
-                        <Redirect to="/dashboard" push />
+                        <Redirect to="/list" push />
                 }
             </div>
         );

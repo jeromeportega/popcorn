@@ -28,12 +28,23 @@ class Homepage extends Component {
         }
 
         this._addMovie = this._addMovie.bind(this);
+        this._deleteMovie = this._deleteMovie.bind(this);
     }
 
     componentDidMount() {
         this._getCarouselMovies();
     }
 
+    // Deletes the movie from the carousel if the poster cannot be found
+    _deleteMovie(index) {
+        let movies = this.state.carouselMovies;
+        movies.splice(index, 1);
+        this.setState({
+            carouselMovies: movies,
+        });
+    }
+
+    // Runs the API request to retrieve recent top movies
     _getCarouselMovies() {
         APIHelper.getCarouselMovies()
             .then((data) => {
@@ -44,6 +55,7 @@ class Homepage extends Component {
             });
     }
 
+    // Adds a movie from the recent movies to a person's list if they are signed in, or prompts them to sign in if they aren't.
     _addMovie(movie) {
         console.log(movie);
     }
@@ -55,7 +67,7 @@ class Homepage extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-offset-2 col-md-8">
-                        <div className="jumbotron">
+                        <div className="jumbotron popup-background">
                             <h1>Popcorn.</h1>
                             <hr />
                             <p>Build Your Movie Lists, Share Them With Friends, And Find A Watching Buddy!</p>
@@ -72,6 +84,7 @@ class Homepage extends Component {
                                         <FeaturedMoviesCarousel
                                             movies={this.state.carouselMovies}
                                             addMovie={this._addMovie}
+                                            deleteMovie={this._deleteMovie}
                                         />
                                     </div>
                                 </StyleRoot>
